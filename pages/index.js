@@ -40,12 +40,12 @@ const callGenerateEndpoint = async () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Choose the Right Colors and Fonts for Your Website.</h1>
+            <h1>You and your freelancer aren't on the same page?</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Hot Mess is not a thing for website designs. <br></br>
-              Make sure your website's colors and fonts match its overall tone and message. <br></br>
-              Create a <s>company</s> Brand.</h2>
+            <h2>They will understand a Project Brief better. <br></br>
+              Create a poject brief according to you.  <br></br>
+              For ex: Personal Brand for a budding startup Founder. Add details for taste.<s>company</s> Brand.</h2>
           </div>
         </div>
         {/* Added Input code here */}

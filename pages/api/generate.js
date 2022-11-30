@@ -8,8 +8,8 @@ const openai = new OpenAIApi(configuration);
 
 const basePromptPrefix = 
 `
-Give me a list of the names of the top 3 colours with Hex code for a 'x' website, along with a list of the top 3 Google fonts for it Give one-line reasons or research for each choice beside it. 
-x: 
+Write me a project brief that I can give to a freelancer for my website project.
+Project:
 `
 async function generateAction(req, res) {
     // Run first prompt
@@ -19,7 +19,7 @@ async function generateAction(req, res) {
         model: 'text-davinci-003',
         prompt: `${basePromptPrefix}${req.body.userInput}.\n`,
         temperature: 0.7,
-        max_tokens: 250,
+        max_tokens: 500,
     });
 
     const basePromptOutput = baseCompletion.data.choices.pop();

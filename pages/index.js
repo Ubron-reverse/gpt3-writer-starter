@@ -45,7 +45,7 @@ const callGenerateEndpoint = async () => {
           <div className="header-subtitle">
             <h2>They will understand a Project Brief better. <br></br>
               Create a poject brief according to you.  <br></br>
-              For ex: Personal Brand for a budding startup Founder. Add details for taste.<s>company</s> Brand.</h2>
+              For ex: Personal Brand for a budding startup Founder. Add details for taste.</h2>
           </div>
         </div>
         {/* Added Input code here */}

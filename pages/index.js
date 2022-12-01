@@ -5,8 +5,10 @@ import buildspaceLogo from '../assets/buildspace-logo.png';
 
 const Home = () => {
   const [userInput, setUserInput] = useState('');
-  const [apiOutput, setApiOutput] = useState('');
-const [isGenerating, setIsGenerating] = useState(false);
+
+  //adding generate button functionality
+  const [apiOutput, setApiOutput] = useState('')
+const [isGenerating, setIsGenerating] = useState(false)
 
 const callGenerateEndpoint = async () => {
   setIsGenerating(true);
@@ -27,59 +29,65 @@ const callGenerateEndpoint = async () => {
   setApiOutput(`${output.text}`);
   setIsGenerating(false);
 }
-{/*Till here added after first const linw*/}
-  function onUserChangedText(event) {
-    console.log(event.target.value);
+
+  const onUserChangedText = (event) => {
+    // console.log(event.target.value);
     setUserInput(event.target.value);
-  }
+  };
+
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>Choose Fonts & Colors</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>You and your freelancer aren't on the same page?</h1>
+            <h1>Choose the Right Colors and Fonts for Your Website.</h1>
           </div>
           <div className="header-subtitle">
-            <h2>They will understand a Project Brief better. <br></br>
-              Create a poject brief according to you.  <br></br>
-              For ex: Personal Brand for a budding startup Founder. Add details for taste.</h2>
+            <h2>Hot Mess is not a thing for website designs.<br></br>
+              Make sure your website's colors and fonts match its overall tone and message.<br></br>
+              Create a <s>company</s> Brand.<br></br>
+                <p>Just type the Industry, Niche Market <br></br>
+                Example: Pets, Dog Food
+                </p>
+            </h2>
+            
           </div>
         </div>
-        {/* Added Input code here */}
+        {/*textarea*/}
         <div className="prompt-container">
-          <textarea 
-            placeholder="start typing here" 
-            className="prompt-box"  
-            value={userInput} 
-            onChange={onUserChangedText} />
-            {/*New code for button */}
-            <div className="prompt-buttons">
-              <a 
-               className={isGenerating ? 'generate-button loading' : 'generate-button'}
-               onClick={callGenerateEndpoint}
-               >
-              <div className="generate">
-              {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
-            </div>
-             </a>
-          </div>
-
-          {apiOutput && (
-         <div className="output">
-          <div className="output-header-container">
-           <div className="output-header">
-             <h3>Output</h3>
-              </div>
-             </div>
-           <div className="output-content">
-            <p>{apiOutput}</p>
-            </div>
-        </div>
+  <textarea
+    placeholder="start typing here"
+    className="prompt-box"
+    value={userInput}
+    onChange={onUserChangedText}
+  />
+  <div className="prompt-buttons">
+  <a
+    className={isGenerating ? 'generate-button loading' : 'generate-button'}
+    onClick={callGenerateEndpoint}
+  >
+    <div className="generate">
+    {isGenerating ? <span class="loader"></span> : <p>Generate</p>}
+    </div>
+  </a>
+  </div>
+  {/* Adding GPT-3's Output to UI*/}
+  {apiOutput && (
+  <div className="output">
+    <div className="output-header-container">
+      <div className="output-header">
+        <h3>Output</h3>
+      </div>
+    </div>
+    <div className="output-content">
+      <p>{apiOutput}</p>
+    </div>
+  </div>
 )}
-       </div>
+</div>
       </div>
       <div className="badge-container grow">
         <a
@@ -96,5 +104,7 @@ const callGenerateEndpoint = async () => {
     </div>
   );
 };
+
+
 
 export default Home;

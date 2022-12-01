@@ -38,8 +38,11 @@ const generateAction = async (req, res) => {
  
    Use below format:
    FONTS(list):
+
    COLORS(list):
+
    NORBU'S RECOMMENDATION:
+   
    `
    
    // I call the OpenAI API a second time with Prompt #2

@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(0, 0, 0);
     flex-flow: column nowrap;
     gap: 10px;
     height: 100vh;
@@ -48,7 +48,7 @@ body {
     gap: 12px;
 }
 
-.header-title h1 {
+.header-title h1{
     width: 100%;
     font-weight: 700;
     font-size: 72px;
@@ -173,7 +173,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(104, 15, 193);
+    background-color: rgb(255, 79, 18);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;

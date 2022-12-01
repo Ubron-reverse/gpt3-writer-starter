@@ -49,8 +49,8 @@ const callGenerateEndpoint = async () => {
             <h2>Hot Mess is not a thing for website designs.<br></br>
               Make sure your website's colors and fonts match its overall tone and message.<br></br>
               Create a <s>company</s> Brand.<br></br>
-                <p>Just type the Industry, Niche Market <br></br>
-                Example: Pets, Dog Food
+                <p>Just type the Industry, Niche Market. Add Details for taste <br></br>
+                Example: Restaurant, Italan that specialises in Pasta.
                 </p>
             </h2>
             

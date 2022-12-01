@@ -29,11 +29,11 @@ const generateAction = async (req, res) => {
    // Prompt #2.
    const secondPrompt = 
    `
-   Take the Two Lists below and choose one font and color from each list. Don't just list the points. Write a short blog in Chris Do's style. Go deep into each one. Explain why this choice is best for the Industry.
- 
-   Industry: ${req.body.userInput}
- 
+   Take the Two Lists below and give compelling reasons for each choice. Write a short blog in Chris Do's style. Go deep into each one. Explain why this choice is best for the Industry.
+    Make a summary list at the end.
    Two Lists: ${basePromptOutput.text}
+
+   Industry: ${req.body.userInput}
  
    Font & Color:
    `

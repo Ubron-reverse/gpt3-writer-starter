@@ -9,9 +9,9 @@ const openai = new OpenAIApi(configuration);
 const basePromptPrefix = 
 `
 Give me two numbered lists of
-1. Fonts: The name of top 3 Google fonts for the industry mentioned below
-2. Colors: Name of the top 3 colours with their hexcodes for the industry mentioned below
-Industry:
+1. Fonts: The name of top 3 Google fonts for the Topic specified below
+2. Colors: Name of the top 3 colours with their hexcodes for the Topic specified below
+Topic:
 `;
 const generateAction = async (req, res) => {
   // Run first prompt
@@ -29,13 +29,17 @@ const generateAction = async (req, res) => {
    // Prompt #2.
    const secondPrompt = 
    `
-   Take the Two Lists below and give compelling reasons for each choice. Write a short blog in Chris Do's style. Go deep into each one. Explain why this choice is best for the Industry.
-    Make a summary list at the end.
+   Take the Two Lists below Titled: 'Fonts' and 'Colors' and give short compelling reasons for each color(with Hexcode) and each font. 
+   After that write my recommendation as a Top Freelancer choosing one color and font. Explain why this choice is best for the specified Topic.
+   At the end give the Top Freelancer's recommendation at the end.
    Two Lists: ${basePromptOutput.text}
 
-   Industry: ${req.body.userInput}
+   the Topic: ${req.body.userInput}
  
-   Font & Color:
+   Use below format:
+   FONTS(list):
+   COLORS(list):
+   NORBU'S RECOMMENDATION:
    `
    
    // I call the OpenAI API a second time with Prompt #2
@@ -43,9 +47,9 @@ const generateAction = async (req, res) => {
      model: 'text-davinci-003',
      prompt: `${secondPrompt}`,
      // I set a higher temperature for this one. Up to you!
-     temperature: 0.85,
+     temperature: 0.8,
          // I also increase max_tokens.
-     max_tokens: 1250,
+     max_tokens: 750,
    });
    
    // Get the output
